@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <style>
+        .canvasjs-chart-credit{
+            outline: none;
+    margin: 0px;
+    position: unset !important;
+    right: 2px;
+    top: 286px;
+    color: dimgrey;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: Calibri, "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+        }
+    </style>
     <title>Quadrant Knowledge Solutions - Smart Bot </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,6 +44,41 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
 </head>
+
+<script>
+    window.onload = function() {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+            text: "Technology Monitoring"
+        },
+        data: [{
+            type: "pie",
+            startAngle: 25,
+            toolTipContent: "<b>{label}</b>: {y}%",
+            showInLegend: "true",
+            legendText: "{}",
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - {y}%",
+            dataPoints: [
+                { y: 57, label: "Alliance" },
+                { y: 14, label: "Contracts" },
+                { y: 5, label: "Business Expansion" },
+                { y: 7, label: "Upcoming Events" },
+                { y: 4, label: "Future Plans" },
+                { y: 9, label: "Investment" },
+                { y: 9, label: "M&A" }
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+    </script>
+
 
 <body>
     <!-- Pre-loader start -->
@@ -126,7 +174,7 @@
                                 <div class="main-menu-header">
                                     <!-- <img class="img-40 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image"> -->
                                     <div class="user-details">
-                                        <span>Avassa Systems AB</span>
+                                        <!-- <span>Avassa Systems AB</span> -->
                                         <!-- <span id="more-details">UX Designer<i class="ti-angle-down"></i></span> -->
                                     </div>
                                 </div>
@@ -204,11 +252,13 @@
                                     <!-- Page-header start -->
                                     <div class="page-header card">
                                         <div class="row align-items-end">
-                                            <div class="col-lg-8">
+                                            <div class="col-lg-12">
+                                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                                                 <div class="page-header-title">
                                                     <i class="icofont icofont-table bg-c-blue"></i>
                                                     <div class="d-inline">
-                                                        <h4>Technology Details Table</h4>
+                                                        <h4>Recent Activities</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -236,8 +286,8 @@
                                     <!-- Basic table card start -->
                                     <div class="card">
                                         <div class="card-header">
-                                            <h5>Basic table</h5>
-                                            <span>use class <code>table</code> inside table element</span>
+                                            <h5>Technology table</h5>
+                                            <!-- <span>use class <code>table</code> inside table element</span> -->
                                             <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
                                         </div>
                                         <div class="card-block table-border-style">
@@ -245,30 +295,103 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th>#</th>
-                                                            <th>First Name</th>
-                                                            <th>Last Name</th>
-                                                            <th>Username</th>
+                                                            <th>Signal Date</th>
+                                                            <th>Company involved</th>
+                                                            <th>Signal Title</th>
+                                                            <th>Categories</th>
+                                                            <th>Description</th>
+                                                            <th>Link</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
+                                                            <td>16-05-2023</td>
+                                                            <td>Lightbend</td>
+                                                            <td>Lightbend Launches Akka Distributed Cluster for Next-Gen<br> Edge Computing Across Multiple Data Centers</td>
+                                                            <td>New Product/Solution/Service Launch</td>
+                                                            <td>Lightbend, a US-based company providing cloud-native microservices<br> frameworks, launched its Akka Distributed Cluster (Akka v.23.05), <br>which brings innovative new capabilities for accelerating data delivery to users; <br>maintaining application availability even in the event of a cloud provider outage;<br> cutting costs by minimizing data storage expenses and reducing server data traffic;<br> and conserving developer time. These new features, combined with Akka, one of the <br>most powerful platforms for distributed computing, give enterprises the ability to <br>build mission-critical cloud native applications in less time than ever.<br> Akka Distributed Cluster brings industry-first capabilities that blur the distinctions<br> between cloud and edge and continue our progress in building a new paradigm for tomorrow’s <br>cloud-to-edge continuum.</td>
+                                                            <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">2</th>
-                                                            <td>Jacob</td>
-                                                            <td>Thornton</td>
-                                                            <td>@fat</td>
+                                                            <td>15-05-2023</td>
+                                                            <td>BrainChip Holdings Ltd</td>
+                                                            <!-- <td>Thornton</td> -->
+                                                            <td>BrainChip and Quantum Ventura Partner to Develop Cyber Threat Detection</td>
+                                                            <td>Contracts</td>
+                                                            <td>BrainChip Holdings Ltd, an Austraila-based AI company announced that Quantum Ventura Inc., <br>a San Jose-based provider of AI/ML research and technologies, will use BrainChip’s Akida technology <br>to develop new cyber threat-detection tools. Quantum Ventura is creating state-of-the-art cybersecurity<br> applications for the U.S. Department of Energy under the Small Business Innovation Research (SBIR)<br> Program. This project with the Department of Energy offers an ideal opportunity to demonstrate <br>how Akida opens up new possibilities in cybersecurity, including the ability to run complex AI<br> algorithms at the edge, reducing the dependency on the cloud. Akida is an event-based technology<br> that is inherently lower power than conventional neural network accelerators, providing <br>energy efficiency with high performance for partners to deliver AI solutions previously not possible <br>on even battery-operated or fan-less embedded, edge devices.</td>
+                                                            <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">3</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
+                                                            <td>11-05-2023</td>
+                                                            <td>Singtel</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>Singtel brings Azure public MEC for all enterprises to trial</td>
+                                                            <td>New Product/Solution/Service Launch</td>
+                                                            <td>Singtel Signapore based telecommunication firm announced it is making the Azure public <br>multi-access edge compute (MEC) available for all enterprises, unlocking opportunities to <br>experience the advantages of edge computing and artificial intelligence (AI) accelerated by 5G.<br> At the launch event, held at Microsoft’s Experience Centre Asia, Singtel also revealed its<br> first commercial customer and the addition of partner solutions like large language modelling (LLM)<br> to its 5G offerings.Through this integration, National University Health System (NUHS) successfully <br>trialled Singtel's high-speed connectivity and low latency 5G network, Paragon and Microsoft Azure, <br>including tools and applications to help surgeons leverage mixed reality technology to better visualise<br> organs in high resolution 3D, and plan operating procedures. Plans are underway to roll out the solution</td>
+                                                            <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>11-05-2023</td>
+                                                            <td>Kalray Inc.</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>Kalray, Arteris, Secure-IC, and Thales, Win the Call for Projects <br>Related to the AI Acceleration Strategy of the "France<br> Relance 2030 - Future Investments" Plan</td>
+                                                            <td>Others</td>
+                                                            <td>Kalray, a France-based semiconductor company, announced that the IP-CUBE project,<br> led by Kalray, has won the “Technological Maturation and Demonstration of Embedded Artificial <br>Intelligence Solutions” call for projects under the “France Relance 2030 – Future Investments” plan.<br> Kalray’s next-generation high-performance, low-power DPU processor is at the heart of the project. <br>The IP-CUBE project, led by Kalray, aims to meet these challenges and create the foundations of a French semiconductor <br>ecosystem in the field of edge computing and embedded AI, based on the national leaders in the field, <br>namely Arteris, Kalray, Secure-IC, and Thales.</td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>11-05-2023</td>
+                                                            <td>Singapore Telecommunications <br>Limited (Singtel), Microsoft</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>Singtel brings Azure public MEC for all enterprises to trial</td>
+                                                            <td>New Product/Solution/Service Launch</td>
+                                                            <td>Singapore Telecommunications Limited (Singtel) announced it is making the Azure public<br> multi-access edge compute (MEC) available for all enterprises, unlocking opportunities to <br>experience the advantages of edge computing and artificial intelligence (AI) accelerated by 5G.<br> At the launch event, held at Microsoft’s Experience Centre Asia, Singtel also revealed its first<br> commercial customer and the addition of partner solutions like large language modelling (LLM)<br> to its 5G offerings. Microsoft Azure public MEC and Azure Programmable Connectivity integrated<br> with Singtel’s 5G network and Paragon, a platform for 5G networks, edge
+                                                                computing and services orchestration;<br> helps enterprises capitalise on 5G to explore high bandwidth and low latency use cases to <br>transform operations in multiple sectors such as smart city, public safety, transportation, healthcare, and urban planning.</td>
+                                                                 <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                            </tr>
+                                                        <tr>
+                                                            <td>10-05-2023</td>
+                                                            <td>BrainChip</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>BrainChip Pushes the Edge in 2023 with Akida Innovations, Expanded Partner Ecosystem</td>
+                                                            <td>Products/Solutions Updates</td>
+                                                            <td>BrainChip Holdings Ltd, Australian commercial producer of ultra-low power, fully digital,<br> event-based, neuromorphic AI IP, reflected on its achievements in the first quarter of 2023 that <br>saw the launch of its second-generation Akida™ processor IP platform and key partnerships with AI<br> leaders.The 2nd generation Akida technology platform is a hyper-efficient, yet powerful neural processing <br>system designed for embedded Edge AI applications. </td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10-05-2023</td>
+                                                            <td>Ooredoo QSC, Lenovo</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>Ooredoo Partners with Lenovo to Investigate Upgrading <br>Business Offerings with New Innovative 5G and AI Solutions</td>
+                                                            <td>Alliance</td>
+                                                            <td>Ooredoo, a Qatar-based ICT company, signed an MoU with Lenovo. <br>The MoU paves the way for the two companies to collaborate on innovative solutions for the B2B sector,<br> with a focus on data sovereignty, private 5G solutions, advanced AI solutions and High-Performance <br>Computing (HPC) as a service. Lenovo’s global experience as a leader in HPC, cloud, and edge computing <br>will drive scientific and technological advancements in Qatar. Lenovo and Ooredoo will work together<br> to bring in advanced technological solutions that deliver data sovereign Hybrid Cloud <br>with 5G capabilities to their customers. These solutions will allow customers to process<br> and store sensitive data in-country and at the edge, providing an extra layer of security and compliance.</td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10-05-2023</td>
+                                                            <td>GitLab</td>
+                                                            <!-- <td>the Bird</td> -->
+                                                            <td>GitLab has incorporated an AI-based security feature<br> that makes use of Google Cloud’s foundation models. The goal <br>is to help customers identify and address vulnerabilities quickly and securely. Using generative <br>AI to speed up application development will eventually benefit the edge <br>computing ecosystem by bringing new edge platform and application capabilities <br>to a broader audience of developers. In terms of edge computing, IoT is <br>expected to be another beneficiary of generative AI for coding, while companies like <br>Siemens are exploring its use for programming industrial control systems and robotics platforms.</td>
+                                                            <td>Products/Solutions Updates</td>
+                                                            <td>TML crosses a landmark milestone for 500,000 connected vehicles on their unified,<br> connected vehicle platform. In early 2019, Tata Motors collaborated with Tata Elxsi<br> (design and technology services company of Tata Group) to adopt and adapt the TETHER<br> Connected Vehicle Platform (CVP) to deliver scalability. Tata Motors deployed the TETHER<br> CVP under the brands of Fleet Edge for CV, iRA for PV & Zconnect for EV, which offer<br> features like track and trace, geo-fencing and alerts, driver behaviour monitoring, and fuel <br>efficiency monitoring. TETHER CVP was built as a modular platform, which can be scaled up to offer<br> a wide range of solutions with third-party applications through APIs. In addition, it is a 5G-ready<br> platform with capabilities to handle hype scalar traffic, massive FOTA, and digital twin <br>capabilities catering to the SDV roadmap of the OEM. The TETHER CVP roadmap elevates the platform <br>capabilities by extending use cases for 2 and 3-wheelers and adding support for 5G MEC use cases, <br>edge computing for autonomous driving and an AI-driven analytics layer. This will help OEMs convert <br>data and insights into enhanced customer experience, lower costs, and in monetization.
+                                                            </td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>09-05-2023</td>
+                                                            <td>Nokia and Claro </td>
+                                                            <td>Nokia and Claro deploy the first industrial-grade private 4.9G<br> wireless network in a maritime terminal in Colombia</td>
+                                                            <td>New Product/Solution/Service Launch</td>
+                                                            <td>Nokia and Claro Colombia a Colombian telecommunication opeartor company announced the deployment<br> of an industrial-grade private 4.9G wireless network and edge computing solution at Sociedad <br>Portuaria Puerto Bahía in Cartagena, Colombia, using the Nokia Digital Automation Cloud (DAC),<br> including the Nokia MX Industrial Edge, designed to meet the mission-critical wireless <br>connectivity and on-premises OT data processing needs of an array of industries such as port <br>terminals.Through this both companies are  strengthening advancements in technology, and enhancing <br>safety and port efficiency to promote digital transformation in one of the country's most prominent <br>ports. With this reliable, high-performance and low- latency private wireless network, trying <br>to achieve the goal of supporting Puerto Bahia to become an Industry 4.0 port.</td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>09-05-2023</td>
+                                                            <td>Extreme</td>
+                                                            <td>Extreme Creates First Networking Cloud Continuum Delivering Flexibility, Cloud Sovereignty</td>
+                                                            <td>New Product/Solution/Service Launch</td>
+                                                            <td>Extreme Networks US based networking company introduced ExtremeCloud Edge, <br>the industry’s networking cloud continuum, providing customers with more choice and flexibility<br> when it comes to running networking applications, including management, analytics and AI, from anywhere. <br>ExtremeCloud Edge spans across public to private to edge cloud deployments and helps reduce the complexity<br> and operating costs associated with managing a wide spectrum of cloud use cases. Extreme now provides<br> customers with the flexibility to create the edge of their network, whenever and wherever they choose.</td>
+                                                             <td><a href="https://www.globenewswire.com/en/news-release/2023/05/16/2669993/0/en/Lightbend-Launches-Akka-Distributed-Cluster-for-Next-Gen-Edge-Computing-Across-Multiple-Data-Centers.html">Click Here</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -277,7 +400,7 @@
                                     </div>
                                     <!-- Basic table card end -->
                                     <!-- Inverse table card start -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-header">
                                             <h5>Inverse table</h5>
                                             <span>use class <code>table-inverse</code> inside table element</span>
@@ -317,10 +440,10 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- Inverse table card end -->
                                     <!-- Hover table card start -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-header">
                                             <h5>Hover table</h5>
                                             <span>use class <code>table-hover</code> inside table element</span>
@@ -360,10 +483,10 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- Hover table card end -->
                                     <!-- Contextual classes table starts -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-header">
                                             <h5>Contextual classes</h5>
                                             <span>For Make row Contextual add Contextual class like <code>.table-success</code> in <code> tr tag</code> and For cell add Contextual class in <code> td or th tag</code> . </span>
@@ -439,10 +562,10 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- Contextual classes table ends -->
                                     <!-- Background Utilities table start -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-header">
                                             <h5>Background Utilities</h5>
                                             <span>Regular table background variants are not available with the inverse table, however, you may use <code>text or background utilities</code> to achieve similar styles.</span>
@@ -518,7 +641,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- Background Utilities table end -->
                                 </div>
                                 <!-- Page-body end -->

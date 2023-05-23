@@ -30,6 +30,44 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+
+    <!-- <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: ""
+	},
+	axisY: {
+		title: "Use Cases (in %)",
+		suffix: "%"
+	},
+	axisX: {
+		title: "Industry"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "Lenovo", y: 8.1 },	
+			{ label: "LunarWeb", y: 7.70 },	
+			{ label: "Intel", y: 6.00 },
+			{ label: "Altos", y: 5.50 },	
+			{ label: "Litmus", y: 4.30 },
+			{ label: "Atom IT", y: 3.80 },
+			{ label: "ACS", y: 2.60 },
+			{ label: "Avassa", y: 1.60 }
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script> -->
+
 </head>
 
 <body>
@@ -126,7 +164,7 @@
                                 <div class="main-menu-header">
                                     <!-- <img class="img-40 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image"> -->
                                     <div class="user-details">
-                                        <span>Avassa Systems AB</span>
+                                        <!-- <span>Avassa Systems AB</span> -->
                                         <!-- <span id="more-details">UX Designer<i class="ti-angle-down"></i></span> -->
                                     </div>
                                 </div>
@@ -166,9 +204,9 @@
                                     </a>
                                 </li>
                                 <li class="active">
-                                    <a href="index.html">
+                                    <a href="usercase.html">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>U</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">User Case</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Use Case</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -209,6 +247,8 @@
 
                                     <div class="page-body">
                                         <div class="row">
+                                            <!-- <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script> -->
                                             <div class="col-md-6">
                                                 <div class="card widget-card-1" style="background-color: #97C5FC;">
                                                     <div class="card-block-small"
@@ -218,13 +258,15 @@
                                                             style="text-align: center; background-color: #97C5FC;  color: azure;">
                                                             <h4>Avassa Systems AB</h4>
                                                         </span>
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
+                                           
                                             <div class="col-md-6 col-xl-3">
-                                                <div class="card widget-card-1">
+                                                <div class="card widget-card-1" style="text-align: justify;">
                                                     <div class="card-block-small">
                                                         <!-- <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i> -->
                                                         <span class="text-c-blue f-w-600">
@@ -238,7 +280,7 @@
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
                                                         <!-- <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i> -->
-                                                        <span class="text-c-black f-w-600">
+                                                        <span class="text-c-black f-w-600 text-al" style="text-align: justify;">
                                                             <p>
                                                                 Bridges the gap between modern container application
                                                                 developers and distributed edge compute needs​.
@@ -1241,7 +1283,7 @@
                                         </div>
 
                                         <!-- Statistics -->
-
+<!-- 
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card">
@@ -1268,12 +1310,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
-                                    <div id="styleSelector">
+                                    <!-- <div id="styleSelector">
 
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
